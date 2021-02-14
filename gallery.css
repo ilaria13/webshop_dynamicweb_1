@@ -1,0 +1,61 @@
+.pagTitle {
+  padding-bottom: 2rem;
+}
+
+.saleItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.saleItem > img {
+  order: -1;
+  align-self: flex-start;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.productList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+}
+
+/* SOLD OUT */
+
+.saleItem.soldOut img {
+  opacity: 0.5;
+}
+
+.saleItem.soldOut::before {
+  content: "Sold Out";
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
+  color: black;
+  position: absolute;
+  padding: 1rem;
+}
+
+/* DISCOUNT */
+.saleItem .discounted {
+  display: none;
+}
+.saleItem .detailItem .price span {
+  display: none;
+}
+
+.discounted {
+  text-align: right;
+}
+
+.productList article.onSale .discounted {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productList article.onSale .price span {
+  display: initial;
+}
